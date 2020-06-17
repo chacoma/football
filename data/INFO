@@ -1,0 +1,39 @@
+Datos:
+
+arxs = [
+'data/posiciones_2013-11-03_tromso_stromsgodset_first.json',
+'data/posiciones_2013-11-03_tromso_stromsgodset_second.json',
+'data/posiciones_2013-11-07_tromso_anji_first.json',
+'data/posiciones_2013-11-07_tromso_anji_second.json',
+'data/posiciones_2013-11-28_tromso_tottenham.json'
+]
+
+cada archivo .json es un tiempo de un partido
+
+Las keys de esos archivos son los id de los jugadores 
+(pID, coincide con el nro de la camiseta)
+
+dentro de cada key hay otro diccionario con las keys 'x', 'y', 't' 
+que contienen un array con las posiciones y tiempo de cada jugador
+en ese tiempo del partido
+
+por ejemplo para el jugador nro "5"
+
+data["5"]["x"]=[x(t=0), x(t=1).... array con posicion en eje x ....]
+data["5"]["y"]=[y(t=0), y(t=1).... array con posicion en eje y  ....]
+data["5"]["t"]=[0, 1, .... array con tiempo en formato epoch  ....]
+
+
+IMPORTANTE:
+
+hay datos de jugadores suplentes moviendose al lado del banco
+en precalentamiento, los identifique y los marco como 
+no validos para el analisis.
+
+NoValidos = {
+arxs[0]:['12','11','6', '3'],
+arxs[1]:['12','11','1', '4'],
+arxs[2]:['1','3'],
+arxs[3]:['1','3','4','5','9','14','17'],
+arxs[4]:['3','7','9','10','13'],
+}
